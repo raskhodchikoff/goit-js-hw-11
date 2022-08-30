@@ -132,7 +132,7 @@ const handleLoadNextPage = () => {
 
       renderCard(data.hits);
       lightbox.refresh();
-      if (currentPage >= totalPages) {
+      if (currentPage === totalPages) {
         Notiflix.Notify.info(
           "We're sorry, but you've reached the end of search results."
         );
