@@ -1,2 +1,172 @@
-@import './common';
-@import './header';
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* display: block; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Body
+
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+body,
+button,
+input {
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+}
+
+form {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+.haeder__search {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #dabb52;
+}
+.haeder__search input,
+.haeder__search button {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+.haeder__search input {
+  width: 100%;
+  height: 42px;
+  background: #f9f0da;
+  padding-left: 15px;
+}
+.haeder__search button {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #f15b42;
+  cursor: pointer;
+}
+.haeder__search button:before {
+  content: '\f105';
+  font-family: FontAwesome;
+  color: #f9f0da;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.gallery {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+}
+
+.photo-card {
+  position: relative;
+  margin: 10px;
+  width: calc((100% - 100px) / 5);
+  height: auto;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+a div {
+  background: #000; /* У блока, оборачивающего картинку при наведении будет просвечивать черный фон */
+  overflow: hidden; /* Ограничиваем видиую область */
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  opacity: 1;
+  transition: opacity 0.5s linear, transform 0.5s linear; /* Плавное изменение прозрачности и увеличения */
+}
+
+a:hover div img {
+  opacity: 0.8; /* Высветляем картинку, но она становится темнее, так как под ней черный фон */
+  transform: scale(1.05); /* Увеличение картинки */
+}
+a + a div {
+  background: #fff; /* Если необходимо высветление картинки при наведении, оборачивающий div должен иметь белый фон */
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  position: absolute;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: rgb(224, 216, 216);
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.2s, transform 0.5s;
+}
+
+.photo-card:hover div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-item {
+  display: table-cell;
+  margin: 12px;
+  font-size: 19px;
+  color: #f9f0da;
+  vertical-align: middle;
+}
+
+// b {
+//   text-align: center;
+// }
+
+.loader {
+  display: none;
+  color: #f15b42;
+}
+
+.visible {
+  display: block;
+}
+
+span {
+  font-size: 12px;
+}
