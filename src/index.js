@@ -155,16 +155,5 @@ const handleWindowScroll = ({ target }) => {
   }
 };
 
-// Smoth Scroll
-
-// function smothScroll() {
-//   const { height: cardHeight } =
-//     refs.gallery.firstElementChild.getBoundingClientRect();
-//   window.scrollBy({
-//     top: cardHeight * 2,
-//     behavior: 'smooth',
-//   });
-// }
-
 refs.form.addEventListener('submit', handleSubmit);
 refs.gallery.addEventListener('scroll', handleWindowScroll);
