@@ -95,7 +95,6 @@ function handleSubmit(e) {
       const totalPages = Math.ceil(data.totalHits / HITS_PER_PAGE);
 
       if (data.totalHits === 0) {
-        loaderOn;
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
         );
@@ -109,7 +108,6 @@ function handleSubmit(e) {
       }
       Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
       lightbox.refresh();
-      loaderOff;
 
       if (currentPage < totalPages) {
         loaderOn;
