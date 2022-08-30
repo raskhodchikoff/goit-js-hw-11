@@ -99,7 +99,7 @@ form {
   position: relative;
   margin: 10px;
   width: calc((100% - 100px) / 5);
-  height: auto;
+  height: 240px;
   cursor: pointer;
   overflow: hidden;
 }
@@ -153,10 +153,6 @@ a + a div {
   color: #f9f0da;
   vertical-align: middle;
 }
-
-// b {
-//   text-align: center;
-// }
 
 .loader {
   display: none;
